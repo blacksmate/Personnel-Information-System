@@ -22,9 +22,18 @@ class PISController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //  function for creating designation
+    public function createdesignation()
+    {
+        return view('layouts.designation-management-create');
+
+    }
     public function create()
     {
         //
+        return view('layouts.designation-management-create');
+        
     }
 
     /**

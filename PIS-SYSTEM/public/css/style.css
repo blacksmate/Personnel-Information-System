@@ -5,7 +5,7 @@
     --nav-width: 68px;
     --first-color: #2C29CA;
     --first-color-light: #9796D2;
-    --white-color: #f2f8f6;
+    --white-color: #f3f2f8;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100
@@ -26,10 +26,9 @@ body {
     transition: .5s
 }
 
-a:link {
-    text-decoration: none;
+a {
+    text-decoration: none
 }
-
 
 .header {
     width: 100%;

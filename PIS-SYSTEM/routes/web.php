@@ -21,3 +21,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[PISController::class,'show']);
 
 Route::resource('pds',PISController::class);   
+// Route::get('/layouts/designation-management-create', [PISController::class, 'createdesignation']);
+
+Route::get('/designation/create-designation', [PISController::class, 'createdesignation']);

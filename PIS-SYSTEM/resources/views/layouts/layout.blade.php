@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body id="body-pd">
-    @yield('content')
-            {{-- all the views   that we create that extends in this layout will be able to populate--}}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        @yield('content')
+        {{-- all the views   that we create that extends in this layout will be able to populate--}}
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+<script src="{{asset('js/city.js')}}"></script>
+<script src="{{asset('js/city.min.js')}}"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     var maxField = 10; //Input fields increment limitation
@@ -47,19 +53,15 @@ $(document).ready(function(){
     
     <script>	
 window.onload = function() {	
-
 	// ---------------
 	// basic usage
 	// ---------------
 	var $ = new City();
 	$.showProvinces("#province");
 	$.showCities("#city");
-
-
 	// ------------------
 	// additional methods 
 	// -------------------
-
 	// will return all provinces 
 	console.log($.getProvinces());
 	// will return all cities 
@@ -73,18 +75,15 @@ var x = new City()
 	console.log(x.getProvinces());
 	console.log(x.getAllCities());
 	console.log(x.getCities("Batangas"));	
-
 }
 </script>
 <script>
         document.addEventListener("DOMContentLoaded", function(event) {
-
             const showNavbar = (toggleId, navId, bodyId, headerId) => {
                 const toggle = document.getElementById(toggleId),
                     nav = document.getElementById(navId),
                     bodypd = document.getElementById(bodyId),
                     headerpd = document.getElementById(headerId)
-
                 // Validate that all variables exist
                 if (toggle && nav && bodypd && headerpd) {
                     toggle.addEventListener('click', () => {
@@ -99,12 +98,9 @@ var x = new City()
                     })
                 }
             }
-
             showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
-
             /*===== LINK ACTIVE =====*/
             const linkColor = document.querySelectorAll('.nav_link')
-
             function colorLink() {
                 if (linkColor) {
                     linkColor.forEach(l => l.classList.remove('active'))
@@ -112,9 +108,9 @@ var x = new City()
                 }
             }
             linkColor.forEach(l => l.addEventListener('click', colorLink))
-
             // Your code to run since DOM is loaded and ready
         });
 </script>
+
 </body>
 </html>
